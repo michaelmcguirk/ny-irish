@@ -105,6 +105,24 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'aldryn_boilerplates.context_processors.boilerplate'
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # important - place immediately before AppDirectoriesFinder
+    'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+]
+
+TEMPLATE_LOADERS = [
+    'django.template.loaders.filesystem.Loader',
+    # important! place right before django.template.loaders.app_directories.Loader
+    'aldryn_boilerplates.template_loaders.AppDirectoriesLoader',
+    'django.template.loaders.app_directories.Loader'
+]
+
 
 MIDDLEWARE_CLASSES = [
     'cms.middleware.utils.ApphookReloadMiddleware',
@@ -147,7 +165,22 @@ INSTALLED_APPS = [
     'djangocms_video',
     'reversion',
     'ny_irish',
-    'org_form'
+    'org_form',
+    'aldryn_apphooks_config',
+    'aldryn_boilerplates',
+    'aldryn_translation_tools',
+    'aldryn_reversion',
+    'aldryn_common',
+    'aldryn_events',
+    'appconf',
+    'bootstrap3',
+    'django_tablib',
+    'easy_thumbnails',
+    'extended_choices',
+    'filer',
+    'parler',
+    'sortedm2m',
+    'standard_form'
 ]
 
 LANGUAGES = (
@@ -198,3 +231,13 @@ DATABASES = {
 MIGRATION_MODULES = {
     
 }
+
+ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    # 'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters'
+)
