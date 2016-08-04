@@ -220,10 +220,11 @@ DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'ny-irish.ctyoee9uibzm.us-west-2.rds.amazonaws.com',
+        #'HOST': 'ny-irish.ctyoee9uibzm.us-west-2.rds.amazonaws.com',
+        'HOST': 'localhost',
         'NAME': 'nyirish',
         'PASSWORD': 'Li55adel',
-        'PORT': '',
+        'PORT': '3306',
         'USER': 'nyirish'
     }
 }
