@@ -221,7 +221,7 @@ DATABASES = {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.mysql',
         #'HOST': 'ny-irish.ctyoee9uibzm.us-west-2.rds.amazonaws.com',
-        'HOST': '127.0.0.1',
+        'HOST': 'loclahost',
         'NAME': 'nyirish',
         'PASSWORD': 'Li55adel',
         'PORT': '3306',
